@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-result-vote
+spec:
+  rules:
+  -http:
+    paths:
+      path: /vote
+        backend:
+          serviceName: vote-service
+          servicePort: 80
+      path: /result
+        backend:
+          serviceName: result-service
+          servicePort: 80
