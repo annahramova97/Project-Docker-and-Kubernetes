@@ -4,14 +4,14 @@ metadata:
   name: ingress-result-vote
 spec:
   rules:
-    - host: localhost
+    - host: voting
       http:
         paths:
-        - backend:
+        - path: /vote
+          backend:
             serviceName: vote-service
             servicePort: 80
-      http:
-        paths:
-        - backend:
+        - path: /result
+          backend:
             serviceName: result-service
             servicePort: 80
