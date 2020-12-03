@@ -4,7 +4,7 @@ metadata:
   name: ingress-result-vote
 spec:
   rules:
-  -http:
+  - http:
     paths:
       - path: /vote
         backend:
