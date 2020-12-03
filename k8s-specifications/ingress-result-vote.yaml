@@ -7,10 +7,10 @@ spec:
   -http:
     paths:
       - path: /vote
-          backend:
-            serviceName: vote-service
-            servicePort: 80
+        backend:
+          serviceName: vote-service
+          servicePort: 80
       - path: /result
-          backend:
-            serviceName: result-service
-            servicePort: 80
+        backend:
+          serviceName: result-service
+          servicePort: 80
