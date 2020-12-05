@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     name: vote
+  name: vote
 spec:
   replicas: 1
   selector:
