@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: kubernetes-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /vote
+          backend:
+            serviceName: vote-service
+            servicePort: 80
+        - path: /result
+          backend:
+            serviceName: result-service
+            servicePort: 80
