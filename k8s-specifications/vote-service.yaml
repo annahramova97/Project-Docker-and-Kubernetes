@@ -3,13 +3,11 @@ kind: Service
 metadata:
   labels:
     name: vote
-  name: vote
 spec:
   type: ClusterIP
   ports:
-  - name: "vote-service"
-    port: 3000
-    targetPort: 3000
+    - port: 3000
+      targetPort: 3000
   selector:
-    name: vote
+    app: vote
   
