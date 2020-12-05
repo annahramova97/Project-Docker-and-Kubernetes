@@ -13,7 +13,7 @@ spec:
         - path: /vote
           backend:
             serviceName: vote
-            servicePort: 3000
+            servicePort: 80
         - path: /result
           backend:
             serviceName: result
