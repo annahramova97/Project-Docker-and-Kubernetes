@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: {{ include vote.fullname" . }}
   labels:
-    app: vote
-  name: vote
-  namespace: vote
+    app: {{ include vote.name" . }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: vote
+      app: {{ include vote.name" . }}
   template:
     metadata:
       labels:
-        app: vote
+        app: {{ include vote.name" . }}
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_vote:before
-        name: vote
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"dockersamples/examplevotingapp_vote:before
+        name: {{ .Chart.Name }}
         ports:
         - containerPort: 80
           name: vote
